@@ -240,12 +240,23 @@ for d in * ; do
         fi
 done
 ```
-bam files:
+bam files (folders):
 ```
 for d in * ; do
         if [ -d "$d" ]; then
                 (cd "$d" && samtools view -c -F 260 *.bam > "$d"_bam_reads_number.txt)
         fi
+done
+```
+bam files (no folders):
+```
+module load arch/haswell
+module load SAMtools/1.9-foss-2016b
+
+for f in *.bam; do 
+
+samtools view -c -F 260 ${f} > ${f}_reads_number.txt 
+
 done
 ```
 # Preseq
