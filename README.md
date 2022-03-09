@@ -364,7 +364,7 @@ for i in *.filtered.bam; do samtools idxstats $i >${i/filtered\.bam/filtered\.ba
 ```
 If you want to extract the mitochondrial data from the shotgun data:
 ```
-for i in *.bam; do samtools view -bh $i MT > ${I}_MT.bam; done
+for i in *.bam; do samtools view -bh $i MT > ${i}_MT.bam; done
 ```
 # Authenticity
 ## mapDamage
